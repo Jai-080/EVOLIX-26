@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EVOLIX'26</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f9a602",
+              "background-light": "#f5f6f8",
+              "background-dark": "#080808",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }</script>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-200 min-h-screen selection:bg-primary/30">
+<!-- Header / Navbar -->
+<header class="sticky top-0 z-50 px-6 py-2 glass border-b border-white/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+<div class="flex items-center gap-3"><a class="block flex items-center" href="/">
+<img alt="Evolix 2026 Logo" class="h-14 w-auto md:h-16 transition-transform hover:scale-105" src="Header.png"/>
+</a></div>
+<nav class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+<a class="text-lg font-medium hover:text-primary transition-colors" href="#events">Events</a>
+<a class="text-lg font-medium hover:text-primary transition-colors" href="#coordinators">Coordinators</a>
+<div class="hidden md:block h-4 w-px bg-white/10"></div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    March 17, 2026
+                </div>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6">
+<!-- Hero Section -->
+<section class="py-12 md:py-16 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute -z-10 w-96 h-96 bg-primary/20 blur-[120px] rounded-full top-0 left-1/2 -translate-x-1/2"></div>
+<img src="Vistas Logo White W 1920px X H 1080px (3).png" alt="Vistas Logo" class="h-32 md:h-48 w-auto mb-8"/>
+<h2 class="text-2xl md:text-4xl font-bold text-primary mb-8 uppercase tracking-wider" style="font-family: 'Rajdhani', sans-serif;">Department of Aritificial Intelligence & Machine Learning </h2>
+<h1 class="text-5xl md:text-8xl font-black text-white leading-none tracking-tight mb-8"><img alt="Evolix 2026" class="h-64 md:h-96 w-auto mx-auto gold-glow transition-transform hover:scale-105 h-[30rem] md:h-[45rem]" src="logo.png"/></h1>
+<p class="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
+                Join 300+ students for a day of technical brilliance and non-technical fun. Push your boundaries and showcase your talent.
+            </p>
+</section>
+<!-- Technical Events Section -->
+<section class="py-20" id="events">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold text-white mb-2">Technical Events</h2>
+<p class="text-slate-400">Showcase your engineering prowess</p>
+</div>
+<div class="h-px flex-grow mx-8 bg-gradient-to-r from-[#f9a602]/50 to-transparent hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Event Card 1 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center group relative overflow-hidden" data-alt="Digital matrix lines representing coding challenge" style="background-image: url('debug_duel.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">4 HOURS</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Debug Duel</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">An intensive 4-hour algorithmic challenge designed to test your problem-solving skills under pressure.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdx0O-qYSP9LPn9bMFhtWZ3WH69XmzG5N4T-dja3A4JL6xyPw/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Modern industrial robot arm in a dark room" style="background-image: url('auction.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">ARENA</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Log Auction</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">The ultimate battleground for bots. Navigate through obstacles or face off in a classic sumo-wrestle.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc9b3zBOCGWiIcDDZnvP3MLiZ9aVcLoNiD-B8CsX7sKNalRHQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Satellite imagery of Earth connecting dots" style="background-image: url('tech_talk.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">RESEARCH</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Tech Talk</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Present your innovative research and technical findings to a panel of distinguished industry experts.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf62wBXBK_Yrp465V9QrpBbJmb3NJV7PPcUmrrDRGiB8L-7PA/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Cyber security concept with digital lock" style="background-image: url('Sharks_eye.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">CYBER</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Shark's Eye</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Dive deep into the world of ethical hacking, network security, and cryptography in this capture-the-flag style event.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfeAMjgBzbdzRf9khP3TIOgj5Yu_qvlYhWApHSq0Yqsi_Q6WA/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div><!-- Event Card 5 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Neural network nodes connection" style="background-image: url('Deadline_design.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">AI/ML</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Deadline Design</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Build and train models to solve real-world problems. Showcase your data science skills in this competitive hackathon.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScQ_YRrZ-YlVvdenoKFfDtqdrhJJ5nwUB-KtbPwHdNPzZc9ZQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div><!-- Event Card 6 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Internet of things smart city concept" style="background-image: url('workshop.jpg');">
+<div class="absolute top-4 right-4 glass px-3 py-1 rounded text-xs font-bold text-white">IOT</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Workshop</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Explore the future of connected devices. Demonstrate your hardware prototypes and smart automation solutions.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeN1W4ayXKkqBUv-bOgBIZD1imHPk-c1rD2tSwwOW_1AIOVTQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div></div>
+</section>
+<!-- Non-Technical Events Section -->
+<section class="py-20">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold text-white mb-2">Non-Technical Events</h2>
+<p class="text-slate-400">Unlock your creative side</p>
+</div>
+<div class="h-px flex-grow mx-8 bg-gradient-to-r from-[#d4af37]/50 to-transparent hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Event Card 4 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Colorful glowing computer setup for gaming" style="background-image: url('cinephile.jpg');">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">Cinephile</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Competitive gaming tournament featuring Valorant and FIFA. Join the squad and claim the championship.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScS314VjYnsHnRgWljbNOw4imJvGF1Fjs5VZiiPrXOAsW8VSQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 5 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Person holding a camera overlooking city" style="background-image: url('E_games.jpg');">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">E games</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Capture the soul of the symposium. Theme-based photography competition for shutterbugs.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSesqayVYZMe9WwZ66K-RE4VI6HyGYk_CxKURqZrNgFBRV_4fw/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 6 -->
+<div class="glass glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 w-full bg-cover bg-center relative" data-alt="Old treasure map with a compass" style="background-image: url('IPL_auction.jpg');">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-white mb-2">IPL Auction</h3>
+<p class="text-slate-400 text-sm mb-6 flex-grow">Solve cryptic clues hidden across the campus in this fast-paced, high-stakes mystery hunt.</p>
+<div class="flex gap-3">
+<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfoB5ZzCKdHbhqNigQ2mmJsoORuoqmv5CXVp2dlTRWrK_KD2g/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Staff Coordinators Section -->
+<section class="py-10 mb-20" id="staff-coordinators">
+<div class="text-center mb-10">
+<h2 class="text-2xl font-bold text-white mb-3">Staff Coordinators</h2>
+<p class="text-slate-400 text-sm">Guiding our technical excellence.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+<!-- Coordinator 1 -->
+<div class="glass p-6 rounded-xl text-center group">
+<div class="size-20 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-primary/40 group-hover:bg-primary transition-colors">
+<span class="text-2xl font-black text-white">M</span>
+</div>
+<h4 class="text-white font-bold mb-1">Dr. A. Manikandan</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Staff Co-ordinator</p>
+<p class="text-slate-400 text-sm">+91 76677 87496</p>
+</div>
+<!-- Coordinator 2 -->
+<div class="glass p-6 rounded-xl text-center group">
+<div class="size-20 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-primary/40 group-hover:bg-primary transition-colors">
+<span class="text-2xl font-black text-white">BB</span>
+</div>
+<h4 class="text-white font-bold mb-1">Ms. F. Benasir Begam</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Staff Co-ordinator</p>
+<p class="text-slate-400 text-sm">+91 80725 05086</p>
+</div>
+</div>
+</section>
+<!-- Coordinators Section -->
+<section class="py-20 mb-20" id="coordinators">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-white mb-4">Event Coordinators</h2>
+<p class="text-slate-400">Have queries? Our team is here to help you.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Coordinator 1 -->
+<div class="glass p-6 rounded-xl text-center group">
+<div class="size-20 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-primary/40 group-hover:bg-primary transition-colors">
+<span class="text-2xl font-black text-white">V</span>
+</div>
+<h4 class="text-white font-bold mb-1">Visruthaa K K</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mb-2"></p>
+<p class="text-slate-400 text-sm">+91 72002 17305</p>
+</div>
+<!-- Coordinator 2 -->
+<div class="glass p-6 rounded-xl text-center group">
+<div class="size-20 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-primary/40 group-hover:bg-primary transition-colors">
+<span class="text-2xl font-black text-white">M</span>
+</div>
+<h4 class="text-white font-bold mb-1">Maharaja K</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mb-2"></p>
+<p class="text-slate-400 text-sm">+91 96003 88859</p>
+</div>
+<!-- Coordinator 3 -->
+<div class="glass p-6 rounded-xl text-center group">
+<div class="size-20 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-primary/40 group-hover:bg-primary transition-colors">
+<span class="text-2xl font-black text-white">S</span>
+</div>
+<h4 class="text-white font-bold mb-1">Srivarsha Suresh</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mb-2"></p>
+<p class="text-slate-400 text-sm">+91 91761 19276</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="glass border-t border-white/10 py-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+<div class="flex items-center gap-3 mb-8">
+<img src="logo.png" alt="Evolix Logo" class="h-32 w-auto"/>
+<h2 class="text-xl font-black tracking-tighter text-white uppercase">EVOLIX'26</h2>
+</div>
+<div class="flex gap-8 mb-10">
+<a class="w-10 h-10 flex items-center justify-center rounded-full glass hover:bg-primary/20 transition-all" href="YOUR_INSTAGRAM_URL" target="_blank">
+<svg class="w-5 h-5 fill-white" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+<p class="text-slate-500 text-sm font-medium">Designed with passion by EVOLIX Media Team</p>
+</div>
+</footer>
+</body></html>
