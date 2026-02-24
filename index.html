@@ -28,6 +28,170 @@
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-200 min-h-screen selection:bg-primary/30">
+<!-- Modal -->
+<div id="detailsModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+<div class="glass border border-white/20 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+<div class="sticky top-0 glass border-b border-white/10 p-6 flex items-center justify-between">
+<h3 class="text-2xl font-bold text-primary" style="font-family: 'Rajdhani', sans-serif;">EVENT RULES & REGULATIONS</h3>
+<button onclick="closeModal()" class="text-slate-400 hover:text-white transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+</button>
+</div>
+<div class="p-6 space-y-4" id="modalBody">
+<div class="space-y-3">
+<h4 class="text-lg font-semibold text-white">General Guidelines</h4>
+<ul class="text-slate-400 space-y-2 text-sm">
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>All participants must register before the event deadline.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Valid student ID is mandatory for entry and verification.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Team size and composition will be specified per event.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Participants must arrive 15 minutes before the scheduled time.</span></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="text-lg font-semibold text-white">Event Rules</h4>
+<ul class="text-slate-400 space-y-2 text-sm">
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Judges' decisions will be final and binding.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Use of unfair means will lead to immediate disqualification.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Participants must follow the code of conduct at all times.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Time limits must be strictly adhered to during presentations.</span></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="text-lg font-semibold text-white">Important Notes</h4>
+<ul class="text-slate-400 space-y-2 text-sm">
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Certificates will be provided to all participants.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Winners will receive prizes and recognition.</span></li>
+<li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Contact coordinators for any queries or clarifications.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script>
+const eventRules = {
+  'Debug Duel': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Debug Duel Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Debug Duel</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Debug Duel</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Debug Duel</span></li>
+      </ul>
+    </div>
+  `,
+  'Log Auction': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Log Auction Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Log Auction</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Log Auction</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Log Auction</span></li>
+      </ul>
+    </div>
+  `,
+  'Tech Talk': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Tech Talk Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Tech Talk</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Tech Talk</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Tech Talk</span></li>
+      </ul>
+    </div>
+  `,
+  'Shark\'s Eye': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Shark's Eye Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Shark's Eye</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Shark's Eye</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Shark's Eye</span></li>
+      </ul>
+    </div>
+  `,
+  'Deadline Design': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Deadline Design Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Deadline Design</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Deadline Design</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Deadline Design</span></li>
+      </ul>
+    </div>
+  `,
+  'Workshop': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Workshop Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Workshop</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Workshop</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Workshop</span></li>
+      </ul>
+    </div>
+  `,
+  'Cinephile': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">Cinephile Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Cinephile</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Cinephile</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Cinephile</span></li>
+      </ul>
+    </div>
+  `,
+  'E games': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">E games Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for E games</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for E games</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for E games</span></li>
+      </ul>
+    </div>
+  `,
+  'IPL Auction': `
+    <div class="space-y-3">
+      <h4 class="text-lg font-semibold text-white">IPL Auction Rules</h4>
+      <ul class="text-slate-400 space-y-2 text-sm">
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for IPL Auction</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for IPL Auction</span></li>
+        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for IPL Auction</span></li>
+      </ul>
+    </div>
+  `
+};
+
+function openModal(eventName) {
+  const modal = document.getElementById('detailsModal');
+  const content = document.getElementById('modalContent');
+  const body = document.getElementById('modalBody');
+  
+  body.innerHTML = eventRules[eventName] || '<p class="text-slate-400">Rules coming soon...</p>';
+  
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  setTimeout(() => {
+    content.classList.remove('scale-95', 'opacity-0');
+    content.classList.add('scale-100', 'opacity-100');
+  }, 10);
+}
+
+function closeModal() {
+  const modal = document.getElementById('detailsModal');
+  const content = document.getElementById('modalContent');
+  content.classList.remove('scale-100', 'opacity-100');
+  content.classList.add('scale-95', 'opacity-0');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }, 300);
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('detailsModal');
+  if (event.target === modal) closeModal();
+}
+</script>
 <!-- Header / Navbar -->
 <header class="sticky top-0 z-50 px-6 py-2 glass border-b border-white/10">
 <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
@@ -53,6 +217,8 @@
 <h2 class="text-2xl md:text-4xl font-semibold text-white mb-8 uppercase tracking-widest" style="font-family: 'Rajdhani', sans-serif;">VISTAS - School of Engineering </h2>
 
 <h2 class="text-2xl md:text-4xl font-bold text-primary mb-8 uppercase tracking-wider" style="font-family: 'Rajdhani', sans-serif;">Department of Aritificial Intelligence & Machine Learning </h2>
+<h2 class="text-2xl md:text-4xl font-bold text-primary mb-8 uppercase tracking-wider" style="font-family: 'Rajdhani', sans-serif;">Cordially invites you to </h2>
+
 <h1 class="text-5xl md:text-8xl font-black text-white leading-none tracking-tight mb-8"><img alt="Evolix 2026" class="h-64 md:h-96 w-auto mx-auto gold-glow transition-transform hover:scale-105 h-[30rem] md:h-[45rem]" src="logo.png"/></h1>
 <p class="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
                 Join 300+ students for a day of technical brilliance and non-technical fun. Push your boundaries and showcase your talent.
@@ -77,7 +243,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Debug Duel</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Face off in real-time coding battles to identify, debug, and fix errors faster than your opponent.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Debug Duel')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdx0O-qYSP9LPn9bMFhtWZ3WH69XmzG5N4T-dja3A4JL6xyPw/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -91,7 +257,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Log Auction</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">An exciting tech quiz meets live auction strategy, where smart bidding wins you the game.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Log Auction')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc9b3zBOCGWiIcDDZnvP3MLiZ9aVcLoNiD-B8CsX7sKNalRHQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -105,7 +271,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Tech Talk</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Present your research ideas and technical papers to showcase innovation, knowledge, and presentation skills.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Tech Talk')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf62wBXBK_Yrp465V9QrpBbJmb3NJV7PPcUmrrDRGiB8L-7PA/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -119,7 +285,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Shark's Eye</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Present your startup or tech idea to the sharks and win them over with innovation and strategy.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Shark\'s Eye')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfeAMjgBzbdzRf9khP3TIOgj5Yu_qvlYhWApHSq0Yqsi_Q6WA/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -132,7 +298,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Deadline Design</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Showcase your UI/UX creativity by designing engaging interfaces under tight deadlines.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Deadline Design')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScQ_YRrZ-YlVvdenoKFfDtqdrhJJ5nwUB-KtbPwHdNPzZc9ZQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -145,7 +311,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Workshop</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Gain practical knowledge and hands-on experience through interactive learning sessions led by experts.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Workshop')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeN1W4ayXKkqBUv-bOgBIZD1imHPk-c1rD2tSwwOW_1AIOVTQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -169,7 +335,7 @@
 <h3 class="text-xl font-bold text-white mb-2">Cinephile</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Test your movie knowledge with exciting quizzes, visual rounds, and rapid-fire challenges.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('Cinephile')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScS314VjYnsHnRgWljbNOw4imJvGF1Fjs5VZiiPrXOAsW8VSQ/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -182,7 +348,7 @@
 <h3 class="text-xl font-bold text-white mb-2">E games</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Compete in high-energy gaming battles and showcase your reflexes and strategy skills.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('E games')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSesqayVYZMe9WwZ66K-RE4VI6HyGYk_CxKURqZrNgFBRV_4fw/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
@@ -195,7 +361,7 @@
 <h3 class="text-xl font-bold text-white mb-2">IPL Auction</h3>
 <p class="text-slate-400 text-sm mb-6 flex-grow">Experience the thrill of team building by creating your own squad in a mock IPL-style auction.</p>
 <div class="flex gap-3">
-<button class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
+<button onclick="openModal('IPL Auction')" class="flex-1 glass border border-white/10 text-white py-2 rounded-lg text-sm font-semibold hover:bg-white/5 transition-colors">Details</button>
 <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfoB5ZzCKdHbhqNigQ2mmJsoORuoqmv5CXVp2dlTRWrK_KD2g/viewform', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-[#f9a602]/20 shadow-[#f9a602]/30">Register</button>
 </div>
 </div>
