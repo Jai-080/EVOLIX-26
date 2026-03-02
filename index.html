@@ -27,12 +27,24 @@
       }</script>
 <link href="styles.css" rel="stylesheet"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-200 min-h-screen selection:bg-primary/30">
+<body class="bg-background-light dark:bg-background-dark text-slate-200 min-h-screen selection:bg-primary/30 relative overflow-x-hidden">
+<!-- Animated Background Grid -->
+<div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+<div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 166, 2, 0.03) 35px, rgba(249, 166, 2, 0.03) 36px), repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(249, 166, 2, 0.03) 35px, rgba(249, 166, 2, 0.03) 36px);"></div>
+<div class="absolute top-20 left-10 w-96 h-96 bg-primary/15 rounded-full blur-[120px] animate-pulse"></div>
+<div class="absolute bottom-40 right-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] animate-pulse" style="animation-delay: 1.5s; animation-duration: 4s;"></div>
+<div class="absolute top-1/2 right-10 w-80 h-80 bg-primary/8 rounded-full blur-[100px] animate-pulse" style="animation-delay: 3s; animation-duration: 5s;"></div>
+</div>
 <!-- Modal -->
 <div id="detailsModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-<div class="glass border border-white/20 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
-<div class="sticky top-0 glass border-b border-white/10 p-6 flex items-center justify-between">
-<h3 class="text-2xl font-bold text-primary" style="font-family: 'Rajdhani', sans-serif;">EVENT RULES & REGULATIONS</h3>
+<div class="glass border border-white/20 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0 relative" id="modalContent">
+<div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none rounded-xl">
+<div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(249, 166, 2, 0.03) 35px, rgba(249, 166, 2, 0.03) 36px), repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(249, 166, 2, 0.03) 35px, rgba(249, 166, 2, 0.03) 36px);"></div>
+<div class="absolute top-10 left-10 w-64 h-64 bg-primary/15 rounded-full blur-[100px] animate-pulse"></div>
+<div class="absolute bottom-10 right-10 w-80 h-80 bg-primary/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1.5s; animation-duration: 4s;"></div>
+</div>
+<div class="sticky top-0 glass border-b border-white/10 p-6 flex items-center justify-between z-10">
+<h3 class="text-2xl font-bold text-primary " style="font-family: 'Rajdhani', sans-serif;">EVENT RULES & REGULATIONS</h3>
 <button onclick="closeModal()" class="text-slate-400 hover:text-white transition-colors">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
 </button>
@@ -70,94 +82,654 @@
 <script>
 const eventRules = {
   'Debug Duel': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Debug Duel Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Debug Duel</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Debug Duel</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Debug Duel</span></li>
-      </ul>
+    <div class="space-y-4">
+  
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div>
+      <span><strong class="text-white">Venue:</strong> MGR Block Lab 3 & 4</span>
     </div>
+    <div>
+      <span><strong class="text-white">Time:</strong> 10:30 am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Debug Duel Rules & Regulations</h4>
+
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <!-- Participation -->
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Individual participation or a team of two is allowed.</strong></span>
+    </li>
+
+  </ul>
+
+  <!-- Round 1 -->
+  <h5 class="text-white font-semibold mt-4">Round 1</h5>
+  <ul class="text-slate-400 space-y-3 text-sm mt-2">
+    
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Includes code snippets, output prediction, image-based puzzles, and logical riddles.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Duration: <strong class="text-white">30 minutes</strong>.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>No negative marking.</span>
+    </li>
+
+  </ul>
+
+  <!-- Round 2 -->
+  <h5 class="text-white font-semibold mt-4">Round 2</h5>
+  <ul class="text-slate-400 space-y-3 text-sm mt-2">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Buggy code will be provided in C / C++ / Java / Python.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants may solve using any programming language.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Includes 3–5 debugging problems.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Duration: <strong class="text-white">60–90 minutes</strong>.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Solutions must follow proper input/output format.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Code must pass all test cases.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Internet browsing or external help is strictly prohibited.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Judge's decisions are final and binding.</strong></span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Monish S:</strong> +91 86676 49503</li>
+      <li><strong class="text-white">Sounthar R:</strong> +91 93600 11447</li>
+    </ul>
+  </div>
+
+</div>
   `,
   'Log Auction': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Log Auction Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Log Auction</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Log Auction</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Log Auction</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> MGR Block Lecture Theater</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> 10:30 am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Log Auction – Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Team Composition</br></strong> Each team must consist of 3–4 members. A participant can be part of only one team. Team name must be registered before the event begins.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Event Format</strong>
+        <br>• Round 1 – Warm-Up (Easy level, basic bidding)
+        <br>• Round 2 – Main Auction (Medium/Hard level, competitive bidding)
+        <br>• Round 3 – Lightning Round (Rapid-fire, no bidding)
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Starting Points & Bidding</strong>
+        <br>• Each team starts with 100 points (or as decided by organizers)
+        <br>• Each question has a minimum starting bid
+        <br>• Bids must increase in fixed increments (e.g., +5 or +10)
+        <br>• Teams cannot bid more than their available points
+        <br>• Bidding time: 30–60 seconds
+        <br>• Answering time: 1 minute
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Scoring System</strong>
+        <br>• Correct Answer: Full bid points added
+        <br>• Wrong Answer: Full bid points deducted
+        <br>• Lightning Round: +10 for correct answers (no deduction)
+        <br>• Question may pass to next highest bidder if answered incorrectly
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Elimination (If Applicable)</strong>
+        <br>• Teams with zero or negative points may be eliminated
+        <br>• Final format will be announced before the event begins
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Restrictions</strong>
+        <br>• No mobile phones, internet access, smart devices, or AI tools
+        <br>• No external assistance or audience interaction
+        <br>• Violation leads to immediate disqualification
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Code of Conduct</br></strong> Maintain discipline and professionalism. Judge's decision is final and binding.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Tie-Breaker</br></strong> Sudden-death question or rapid-fire round in case of equal scores.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Official Declaration</br></strong> Participation in Log Auction implies acceptance of all rules stated above. The organizing committee reserves the right to modify rules if required.</span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Libi Jassin:</strong> +91 79040 97069</li>
+      <li><strong class="text-white">Abarna:</strong> +91 96778 01906</li>
+    </ul>
+  </div>
+</div>
   `,
   'Tech Talk': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Tech Talk Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Tech Talk</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Tech Talk</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Tech Talk</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> Apj Block Conference Hall</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> 1:30 PM - 3:30 PM</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Tech Talk (Paper Presentation) Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The event is open to individuals or teams (maximum 4 members).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Papers must be related to Computer Science, Emerging Technologies, or Sustainable Development Goals (SDG).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Each team must submit their PPT and Abstract in advance.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Each team will get <strong class="text-white">3 minutes</strong> for presentation followed by <strong class="text-white">2 minutes</strong> of Q&amp;A.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Presentations must be in PPT format (8–15 slides).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Strictly no plagiarism is allowed.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants must adhere to a neat and formal dress code.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The decision of the judges will be final and binding.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Any form of misconduct, malpractice, or unfair practices will result in immediate disqualification without prior warning.</span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Swarna M:</strong> +91 88255 50315</li>
+      <li><strong class="text-white">Nivetha D:</strong> +91 78239 78742</li>
+    </ul>
+  </div>
+</div>
   `,
   'Shark\'s Eye': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Shark's Eye Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Shark's Eye</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Shark's Eye</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Shark's Eye</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> VIBA auditorium </span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> Morning 10:30 am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Shark's Eye Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The event is open to individuals or teams (maximum 3 members).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants can pitch a project idea, a startup concept, or an innovative solution.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Each team must submit a brief abstract (maximum 200 words) before <strong class="text-white">10/03/26</strong>.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Each team will get <strong class="text-white">5 minutes</strong> to present their idea followed by <strong class="text-white">3 minutes</strong> of Q&amp;A.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The presentation must be in PPT format. A common template will be shared. (Optional: Prototypes, mock-ups, or demos may be included.)</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Exceeding the time limit will result in a penalty.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Any form of plagiarism will lead to immediate disqualification.</span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Rokith K: </strong>  +91 93447 26779</li>
+      <li><strong class="text-white">Gayisha Rajesh: </strong>  +91 77087 84483</li>
+            <li><strong class="text-white">Meharnisha M: </strong>  +91 95512 17155</li>
+
+    </ul>
+  </div>
+</div>
   `,
   'Deadline Design': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Deadline Design Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Deadline Design</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Deadline Design</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Deadline Design</span></li>
-      </ul>
+   <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> MGR Block Lab 3 & 4</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> 1:30 PM - 3:30 PM</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Deadline Design – Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Participation</br></strong> Open to individuals or teams (maximum 2 members). Only one entry per team/participant is allowed.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Theme Adherence</br></strong> The theme will be revealed at the start of the event. All designs must strictly follow the announced theme.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Original Work Only</br></strong> Submissions must be completely original. Copying, tracing, or plagiarism will lead to immediate disqualification.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">No Pre-Made Templates</br></strong> Use of ready-made templates, previously prepared files, or pre-designed layouts is strictly prohibited.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Time Limit</br></strong> Total duration is <strong class="text-white">90 minutes</strong>. All work must be completed within the allotted time.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Submission Deadline</br></strong> Late submissions will not be accepted under any circumstances.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Design Tools</br></strong> Participants must bring their own laptops with required tools. Canva, Adobe Photoshop, Adobe Illustrator, Figma, or other tools may be used with prior permission.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Submission Format</br></strong> Final designs must include:
+        <br>• Prototype link (if applicable – Figma, Adobe XD, Canva, etc)
+        <br>• PDF / PNG / JPEG format of the final design
+        <br>• File name format: <strong class="text-white">TeamName_DeadlineDesign</strong>
+        <br>Once submitted, entries cannot be modified.
+      </span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Content Guidelines</br></strong> Designs must not contain inappropriate, offensive, or irrelevant content. Violations will result in disqualification.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Certificates</br></strong> Certificates will be provided only after successful submission. Submission is compulsory to receive the participation certificate.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Judge's Decision</br></strong> The decision of the judges and organizing committee will be final and binding.</span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Rohan D:</strong> +91 87780 19600</li>
+      <li><strong class="text-white">Saravanan V:</strong> +91 75581 79373</li>
+    </ul>
+  </div>
+</div>
   `,
   'Workshop': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Workshop Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Workshop</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Workshop</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Workshop</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> APJ Block Conference Hall</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> 10:30 am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Workshop Rules & Guidelines</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The session will commence promptly at <strong class="text-white">10:30 AM</strong>. Participants must be seated by <strong class="text-white">10:15 AM</strong> to avoid disruptions.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participation certificate will be provided to all attendees.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants are encouraged to bring their own laptops for the hands-on session.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants must arrange their own network connection (mobile hotspot or personal data).</span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Vishal SSM:</strong> +91 95144 13066</li>
+      <li><strong class="text-white">Sriramar T:</strong> +91 91505 77859</li>
+    </ul>
+  </div>
+</div>
   `,
   'Cinephile': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">Cinephile Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for Cinephile</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for Cinephile</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for Cinephile</span></li>
-      </ul>
+ <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> MGR Block Lecture Theater</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> Afternoon 1:30 PM - 3:30 PM</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Cinephile Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>The event is open to individuals or teams (maximum 4 members).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Round 1 – Guess the Tone<br></strong> Identify the song, movie, music composer, or singer from a short audio clip.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Round 2 – Guess the Dialogue<br></strong> Identify the movie, character, or actor from a dialogue clip.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Round 3 – Quiz<br></strong> Questions based on Hollywood/Kollywood movies (dialogues, scenes, cast, and trivia).</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>Participants must answer within the given time limit.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>No use of phones or external help is allowed.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Judge's decisions are final and binding.</strong></span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">The team/participant with the highest points wins!</strong></span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Prizes and certificates will be awarded at the end.</strong></span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Jayachandran K:</strong> +91 63692 30438</li>
+      <li><strong class="text-white">Ragul S:</strong> +91 63815 54350</li>
+      <li><strong class="text-white">Udhaya Pradap S:</strong> +91 88703 49507</li>
+    </ul>
+  </div>
+</div>
   `,
   'E games': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">E games Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for E games</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for E games</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for E games</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> MGR Block Class room 102</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> Morning 10:30am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">E-Games (Garena Free Fire) Rules & Regulations</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Team Registration<br></strong> Participants must register as a team of four (4). Individual entries are not permitted.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Reporting Time<br></strong> All participants must report 30 minutes prior to the scheduled start time. Late arrivals will not be allowed.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Device Regulations<br></strong> Only mobile phones are allowed. PCs, emulators, tablets, and external gaming devices are strictly prohibited.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Network Requirements<br></strong> Participants must use their own mobile network. The organizers are not responsible for connectivity issues.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Gameplay Restrictions<br></strong> Gloo wall breaking and grenade usage are prohibited. Gun skins and character skills are not allowed.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Fair Play Policy<br></strong> Hacking, panels, mod apps, or any third-party software will lead to immediate disqualification.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Code of Conduct<br></strong> Maintain discipline and sportsmanship. Harsh, abusive, or inappropriate language will result in disqualification.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span>All participants must strictly follow the rules and respect the organizing committee’s decisions.</span>
+    </li>
+
+    <li class="flex gap-3">
+      <span class="text-primary mt-1 font-bold">•</span>
+      <span><strong class="text-white">Judge's decisions are final and binding.</strong></span>
+    </li>
+
+  </ul>
+
+  <!-- Student Coordinators -->
+  <div class="pt-4 border-t border-white/10">
+    <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+    <ul class="text-slate-400 text-sm space-y-1">
+      <li><strong class="text-white">Barath Kumar:</strong> +91 78457 93311</li>
+      <li><strong class="text-white">Jai Surya:</strong> +91 73056 60579</li>
+            <li><strong class="text-white">Sanjai:</strong> +91 80728 87185</li>
+
+    </ul>
+  </div>
+</div>
   `,
   'IPL Auction': `
-    <div class="space-y-3">
-      <h4 class="text-lg font-semibold text-white">IPL Auction Rules</h4>
-      <ul class="text-slate-400 space-y-2 text-sm">
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 1 for IPL Auction</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 2 for IPL Auction</span></li>
-        <li class="flex gap-2"><span class="text-primary mt-1">•</span><span>Placeholder rule 3 for IPL Auction</span></li>
-      </ul>
+    <div class="space-y-4">
+  <!-- Venue & Time -->
+  <div class="flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Venue:</strong> MGR Block Class room 204</span>
     </div>
+    <div class="flex items-center gap-2">
+      <span><strong class="text-white">Time:</strong> Morning 10:30 am - 12:30 pm</span>
+    </div>
+  </div>
+
+  <h4 class="text-lg font-semibold text-white">Auction Format & Rules</h4>
+  <ul class="text-slate-400 space-y-3 text-sm">
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Team Purse<br></strong> Each team will receive ₹120 crores as its total purse amount.</span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Retention & RTM<br></strong> Each team is allowed one retention worth ₹15 crores and one Right to Match (RTM) card.</span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Bidding Structure<br></strong> Bidding starts from ₹10 lakhs and goes up to ₹5 crores with a paddle raise of ₹25 lakhs. For bids above ₹5 crores, the paddle raise will be ₹50 lakhs.</span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Squad Size<br></strong> Each team must select a minimum of 15 players and can select a maximum of 25 players.</span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Team Composition<br></strong> A team must include at least 1 wicket keeper, 4 bowlers, and 4 batsmen.</span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Judge's decisions are final and binding.</strong></span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">The team/participant with the highest points wins!</strong></span></li>
+    <li class="flex gap-3"><span class="text-primary mt-1 font-bold">•</span><span><strong class="text-white">Prizes and certificates will be awarded at the end.</strong></span></li>
+  </ul>
+<!-- Student Coordinators -->
+<div class="pt-4 border-t border-white/10">
+  <h5 class="text-white font-semibold mb-2 text-center">Student Coordinators</h5>
+  <ul class="text-slate-400 text-sm space-y-1">
+        <li><strong class="text-white">Devanand G:</strong> +91 99022 21871</li>
+
+    <li><strong class="text-white">Gogulnath R:</strong> +91 86376 54400</li>
+    <li><strong class="text-white">Bhuvanendiran P:</strong> +91 73058 94486</li>
+  </ul>
+</div>
+</div>
   `
 };
 
@@ -212,14 +784,20 @@ window.onclick = function(event) {
 <main class="md:max-w-7xl md:mx-auto md:px-6">
 <!-- Hero Section -->
 <section class="py-12 md:py-16 px-6 flex flex-col items-center text-center relative overflow-hidden">
-<div class="absolute -z-10 w-96 h-96 bg-primary/20 blur-[120px] rounded-full top-0 left-1/2 -translate-x-1/2"></div>
+<div class="absolute -z-10 w-96 h-96 bg-primary/20 blur-[120px] rounded-full top-0 left-1/2 -translate-x-1/2 animate-pulse"></div>
 <img src="Vistas Logo White W 1920px X H 1080px (3).png" alt="Vistas Logo" class="h-32 md:h-48 w-auto mb-8"/>
 <h2 class="text-2xl md:text-4xl font-semibold text-white mb-8 uppercase tracking-widest" style="font-family: 'Inter', serif;">VISTAS - School of Engineering </h2>
 
 <h2 class="text-2xl md:text-4xl font-bold text-primary mb-8 uppercase tracking-wider" style="font-family: 'Arial', serif;">Department of Aritificial Intelligence & Machine Learning </h2>
 <h2 class="text-xl md:text-3xl font-bold text-primary mb-8 uppercase tracking-wider" style="font-family: 'Arial', serif;">Cordially invites you to</h2>
 
-<h1 class="text-5xl md:text-8xl font-black text-white leading-none tracking-tight mb-8"><img alt="Evolix 2026" class="h-64 md:h-96 w-auto mx-auto gold-glow transition-transform hover:scale-105 h-[25rem] md:h-[35rem]" src="logo.png"/></h1>
+<h1 class="text-5xl md:text-8xl font-black text-white leading-none tracking-tight mb-8 relative">
+<div class="absolute -inset-8 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 blur-2xl animate-pulse" style="animation-duration: 3s;"></div>
+<div class="absolute -inset-12 border-2 border-primary/30 rounded-full animate-ping" style="animation-duration: 2s;"></div>
+<div class="absolute -inset-12 border-2 border-primary/20 rounded-full animate-ping" style="animation-duration: 2s; animation-delay: 0.5s;"></div>
+<div class="absolute -inset-12 border-2 border-primary/10 rounded-full animate-ping" style="animation-duration: 2s; animation-delay: 1s;"></div>
+<img alt="Evolix 2026" class="h-64 md:h-96 w-auto mx-auto gold-glow transition-transform hover:scale-105 h-[25rem] md:h-[35rem] relative z-10 drop-shadow-[0_0_50px_rgba(249,166,2,0.5)]" src="logo.png"/>
+</h1>
 <p class="text-2xl md:text-3xl text-primary font-bold mb-6 uppercase tracking-wider" style="font-family: 'Inter', sans-serif;">The National Level Technical Symposium</p>
 <p class="max-w-2xl text-slate-400 text-lg md:text-xl leading-relaxed mb-10">
                 Join 300+ students for a day of technical brilliance and non-technical fun. Push your boundaries and showcase your talent.
@@ -448,7 +1026,7 @@ window.onclick = function(event) {
 <h2 class="text-xl font-black tracking-tighter text-white uppercase">EVOLIX'26</h2>
 </div>
 <div class="flex gap-8 mb-10">
-<a class="w-10 h-10 flex items-center justify-center rounded-full glass hover:bg-primary/20 transition-all" href="YOUR_INSTAGRAM_URL" target="_blank">
+<a class="w-10 h-10 flex items-center justify-center rounded-full glass hover:bg-primary/20 transition-all" href="https://www.instagram.com/evolix2k26?igsh=YzJ6dmQ2aXdnMXR3" target="_blank">
 <svg class="w-5 h-5 fill-white" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
 </a>
 </div>
